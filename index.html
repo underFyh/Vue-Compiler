@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div class="home" style="color: red;  fontSize: 20px">
+        你好, {{ name }}
+        <span> 年龄{{ age }}, happy </span>
+    </div>
+</div>
+<script src="dist/umd/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        // template: `
+        //     <div id="app2" style="color: red; fontSize: 14px">
+        //         你好, {{ name }},
+        //         <span style="color: #25a4bb"> 这是span </span>
+        //     </div>
+        // `,
+        data() {
+            return {
+                name: '田田',
+                age: 2
+            }
+        }
+    })
+</script>
+<script>
+    // let str = `你好{{name}}, 欢迎光临{{address}}`
+    // const defaultTagRE = /\{\{((?:.|\r?\n)+?)\}\}/g;
+    //
+    // let match, // 匹配项
+    //     index, // 记录匹配项开始的索引值
+    //     lastIndex = defaultTagRE.lastIndex = 0, // 正则上一次匹配出的索引位置
+    //     textArr = []; // 结果集合
+    //
+    // // 如果匹配出来了则继续匹配
+    // while (match = defaultTagRE.exec(str)) {
+    //     // ['{{name}}', 'name', index: 2, input: '你好{{name}}, 欢迎光临', groups: undefined]
+    //     // ['{{address}}', 'address', index: 16, input: '你好{{name}}, 欢迎光临{{address}}', groups: undefined]
+    //     console.log(match);
+    //     index = match.index;
+    //     console.log(lastIndex, 'last');
+    //     if (index > lastIndex) {
+    //         textArr.push(str.slice(lastIndex, index))
+    //     }
+    //     textArr.push(`_s(${match[1].trim()})`);
+    //     lastIndex = index + match[0].length;
+    // }
+    // console.log(textArr);
+
+    // let reg = /a+/g;
+    // let str = '00a';
+    // reg.test(str);
+    // console.log(reg.lastIndex, 'lastIndex'); // 3
+    // console.log(reg.exec('00aaa')); // 会从索引3开始匹配, 只匹配出了aa
+    // reg.lastIndex = 0; // 重新设置正则
+    // console.log(reg.exec('00aaa')); // 又从索引0开始匹配,匹配出了aaa
+</script>
+</body>
+</html>
